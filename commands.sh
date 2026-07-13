@@ -60,6 +60,10 @@ file execution:
     sh file.sh
     chmod +x file.sh followed by ./file.sh
 
+diff a b #produces a patch file describing differences
+diff -u a b  #produces a patch file describing differences but more human-readable
+patch a < patchfile #modify a by overwriting its content with b content. NOTE: this doesn't redirect to stoud steam hence no redirection is possible
+patch -R a < patchfile #reverse patching
 
 #TEXT PROCESSING & SEARCH
 find
@@ -99,3 +103,15 @@ wget
 #miscellaneous
 
 d = $(cat)
+
+[abc023]
+[a-c0-9]
+[^abc]
+\s
+\S
+\c{2,}{2}{2,3}
++
+*
+.
+^
+$
