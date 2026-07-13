@@ -45,7 +45,7 @@ chmod u/g/o/a+-=rwx
 
     #numeric mode: combines all at once i.e., user, group and others in one take by setting permission bits explicitly
     chmod 100 file.sh
-chown
+chown owner file
 <: input a file to a command
 >: overrite an existing file with comamnd output -> redirect stdout by overwriting file content 
 >>: append an exiting file with command output
@@ -65,11 +65,14 @@ diff -u a b  #produces a patch file describing differences but more human-readab
 patch a < patchfile #modify a by overwriting its content with b content. NOTE: this doesn't redirect to stoud steam hence no redirection is possible
 patch -R a < patchfile #reverse patching
 
+file -C -m magicfile #offset type value decription
+file -b -m magicdb.mgc filename
 #TEXT PROCESSING & SEARCH
-find
+find -type f/d/l -size 2 -name "" -o
 grep
 sed
 awk
+crontab
 
 #USER & SYSTEM ADMINISTRATION
 man
