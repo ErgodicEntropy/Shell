@@ -89,4 +89,13 @@ ssh-copy-id username@server_ip => copy the public key to a VPS server
 ssh username@server_ip => make connection
 ssh-add -l => verify the validity of the public key (after manually pasting it onto the platform SSH settings) with the ssh agent
 ssh-add [private key] => add private key
+ssh-agent: a key manager that securely stores SSH private key in the RAM
+ssh-agent -s: tells the ssh agent to output commands in bourne shell
+ssh -T git@gitrepositorylinkssh
+git clone git@gitrepolinkssh
 wget
+
+
+#miscellaneous
+
+d = $(cat)
