@@ -78,16 +78,33 @@ patch -R a < patchfile #reverse patching
 file -C -m magicfile #offset type value decription
 file -b -m magicdb.mgc filename
 #TEXT PROCESSING & SEARCH
-find [path] -type f/d/l/c/b/p/s -size +2/-2/2c/K/M/G -name "regex" -iname "regex" -mtime -atime -ctime \( -o -a -not/! \) -print -delete -exec [command]{} \;
-grep -i -n -r -v -c -l "textpattern" filename
+find [path] -type f/d/l/c/b/p/s -size +2/-2/2c/K/M/G -name "regex" -iname "regex" -mtime -atime -ctime \( -o -a -not/! \) -print -delete -exec [command]{} \; #it searches objects in a path
+grep -i -n -r -v -c -l "textpattern" filename #it search regex pattern in file content
 sed "s/original/new/2gi"
+    sed 's/old/new/gi[1-9]' file #replace the old by new globally (g), case-insensitive (i), [1-9] occurence
+    sed '[1-9]d' file #delete the [1-9]th line
+    sed -n 's/regex/p' file #print any line that contains regex
+    sed -n '[1-9]p' file #print the [1-9]th line
 awk
 crontab
 tr 'original' 'new'
+    tr -s "[char]" #squeezes char repetitions into one
 wc -l -w -c -m filename
+cut #extract portions of bytes, characters or fields from a file
+    cut -d [delimiter] #cut by a delimiter
+    cut -f #cut by fields aka columns
+    cut -f[1-9] #select column [1-9]
+    cut -f[1-9],[1-9] #select columns [1-9] and [1-9] -> recursive definition
+    cut -f[1-9]-[1-9] #cut a range
+    cut --complement #cut the opposite
+    cut -s
+    cut -c #characters
+    cut -b #bytes
 
 #USER & SYSTEM ADMINISTRATION
 man
+--help
+--version
 sudo
 su
 who
@@ -102,6 +119,7 @@ ps
 kill 
 df
 du
+
 
 #NETWORKING
 ping
@@ -118,18 +136,24 @@ ssh -T git@gitrepositorylinkssh
 git clone git@gitrepolinkssh
 wget
 curl
-ifconfig
-ip link show
+ifconfig enp4s0f0
+ip link
+    ip link show
 
 #miscellaneous
 
 ##environment variables
 PWD
 HOME
+~: home
+/: root
 
 ## assignments
 
 d = $(cat)
+
+$0, $1,...etc 
+$@
 
 [abc023]
 [a-c0-9]
@@ -142,3 +166,5 @@ d = $(cat)
 .
 ^
 $
+
+#scripting
