@@ -78,13 +78,13 @@ patch -R a < patchfile #reverse patching
 file -C -m magicfile #offset type value decription
 file -b -m magicdb.mgc filename
 #TEXT PROCESSING & SEARCH
-find -type f/d/l/c/b/p/s -size +2/-2/2 -name "regex" -iname "regex" -mtime -atime -ctime -o -a -not/! -print -delete -exec [command]{} \;
+find [path] -type f/d/l/c/b/p/s -size +2/-2/2c/K/M/G -name "regex" -iname "regex" -mtime -atime -ctime \( -o -a -not/! \) -print -delete -exec [command]{} \;
 grep -i -n -r -v -c -l "textpattern" filename
 sed "s/original/new/2gi"
 awk
 crontab
 tr 'original' 'new'
-wc
+wc -l -w -c -m filename
 
 #USER & SYSTEM ADMINISTRATION
 man
@@ -118,7 +118,8 @@ ssh -T git@gitrepositorylinkssh
 git clone git@gitrepolinkssh
 wget
 curl
-
+ifconfig
+ip link show
 
 #miscellaneous
 
